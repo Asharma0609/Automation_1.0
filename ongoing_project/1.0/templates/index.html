@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Abhishek Health Monitoring Tool</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+    <div class="header-box">
+        <div class="header-text">BlueCat ™</div>
+        <h1>Abhishek Health Monitoring Tool</h1>
+        <img class="customer-logo" src="{{ url_for('static', filename='images/CS-logo-trans-2.png') }}">
+    </div>
+
+    <div
+            class="separator">
+
+    </div>
+
+    <div class="options">
+        <button class="option-button" id="bddsToggle">BDDS Analyzer</button>
+    </div>
+
+    <div class="separator"></div>
+
+    <!-- Container for the hidden upload form -->
+    <div id="uploadContainer" class="hidden">
+        <label for="file">Choose a .tgz file to upload:</label>
+        <input type="file" id="file" name="file" accept=".tgz">
+        <br>
+        <input type="button" value="Upload" onclick="uploadFile()">
+        <div id="upload-status" class="hidden">File successfully uploaded</div>
+        <input type="hidden" id="upload-message" value="">
+    </div>
+
+    <!-- Container for the investigation option -->
+    <div id="investigationContainer" class="hidden">
+        <p>Ready for Investigation?</p>
+        <button class="option-button" id="startInvestigation">Start Investigation</button>
+    </div>
+
+    <!-- Add an element for the spinner and style it -->
+    <div id="spinner" class="hidden">
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <p class="spinner-text">Starting Investigation...</p>
+    </div>
+
+    <!-- Include the external JavaScript file -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+    <!-- Add an element for the download link -->
+    <a id="downloadLink" style="display: none;"></a>
+</body>
+</html>
